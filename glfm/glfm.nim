@@ -314,7 +314,7 @@ proc glfmIsKeyboardVisible*(display: ptr GLFMDisplay): bool
 proc glfmSetKeyboardVisibilityChangedFunc*(display: ptr GLFMDisplay;
     visibilityChangedFunc: GLFMKeyboardVisibilityChangedFunc)
 when defined(android):
-  proc glfmAndroidGetActivity*(): ANativeActivtiy #ptr ANativeActivity
+  proc glfmAndroidGetActivity*(): ANativeActivity #ptr ANativeActivity
 
 proc glfmHomeDir*(): cstring
 proc glfmBundleDir*(): cstring
