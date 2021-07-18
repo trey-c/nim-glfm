@@ -23,6 +23,9 @@
   compile: "private/glad.c",
   passL: "-lEGL -lGLESv3".}
 
+when defined android:
+  import android/ndk/anative_activity
+
 const
   GLFM_VERSION_MAJOR* = 0
   GLFM_VERSION_MINOR* = 9
@@ -311,7 +314,7 @@ proc glfmIsKeyboardVisible*(display: ptr GLFMDisplay): bool
 proc glfmSetKeyboardVisibilityChangedFunc*(display: ptr GLFMDisplay;
     visibilityChangedFunc: GLFMKeyboardVisibilityChangedFunc)
 when defined(android):
-  proc glfmAndroidGetActivity*(): pointer #ptr ANativeActivity
+  proc glfmAndroidGetActivity*(): ANativeActivtiy #ptr ANativeActivity
 
 proc glfmHomeDir*(): cstring
 proc glfmBundleDir*(): cstring
